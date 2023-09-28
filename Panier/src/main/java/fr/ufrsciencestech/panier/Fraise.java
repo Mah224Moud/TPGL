@@ -1,18 +1,14 @@
-/**
- *
- * @author roudet
- */
-public class Orange implements Fruit{
+public class Fraise {
     private double prix;
     private String origine;
 	
-    public Orange() 
+    public Fraise() 
     {
         this.prix = 0.5;  //prix en euros
         this.origine="Espagne";
     }
     
-    public Orange(double prix, String origine) 
+    public Fraise(double prix, String origine) 
     {
 	if(prix < 0)
 	    this.prix = -prix;  //une solution possible pour interdire les prix negatifs
@@ -43,25 +39,33 @@ public class Orange implements Fruit{
 
     @Override
     public String toString(){
-        return "Orange de " + origine + " a " + prix + " euros";
+        return "Fraise de " + origine + " a " + prix + " euros";
     }
 
     @Override
-    public boolean equals(Object o){  //predicat pour tester si 2 oranges sont equivalentes
+    public boolean equals(Object o){  //predicat pour tester si 2 Fraises sont equivalentes
         if(o != null && getClass() == o.getClass()){
-            Orange or = (Orange) o;
+            Fraise or = (Fraise) o;
             return (prix == or.prix && origine.equals(or.origine));
         }
         return false;
     }
 
-    public boolean isSeedless() {  //predicat indiquant qu'une orange a des pepins
+    public boolean isSeedless() {  //predicat indiquant qu'une Fraise a des pepins
         return false;
     }
 
 
     public static void main (String[] args){
         //Ecrire ici vos tests
-	System.out.println("premier test Orange");
+	System.out.println("premier test Fraise");
+	Fraise o1 = new Fraise();
+	Fraise o2 = new Fraise(0.99,"France");
+	
+	System.out.println("La 1er Fraise vient de "+o1.getOrigine()+" et coute "+o1.getPrix()+"€");
+	System.out.println("La 2nd Fraise vient de "+o2.getOrigine()+" et coute "+o2.getPrix()+"€");
+	
+	System.out.println("Le prix totale de ce panier est de "+(o1.getPrix()+o2.getPrix())+"€");
+	
    }
 }

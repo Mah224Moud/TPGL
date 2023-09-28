@@ -1,10 +1,10 @@
-package fr.ufrsciencestech.panier;
-
 /**
  *
+
  * @author roudet
+
  */
-public class Banane {
+public class Banane implements Fruit {
     private double prix;
     private String origine;
 
@@ -59,14 +59,18 @@ public class Banane {
         return false;
     }
 
-    public static void main(String[] args) {
-
-        Banane banane = new Banane();
-        Banane bananeParams = new Banane(158, "Danemark");
-        Banane bananeNegatif = new Banane(-3, "Allemagne");
-
-        System.out.println("Banane avec le const vide: " + banane);
-        System.out.println("Banane avec les param initialisé: " + bananeParams);
-        System.out.println("Banane avec le prix negatif: " + bananeNegatif);
-    }
+    /*
+     * public static void main(String[] args) {
+     * 
+     * Banane banane = new Banane();
+     * Banane bananeParams = new Banane(158, "Danemark");
+     * Banane bananeNegatif = new Banane(-3, "Allemagne");
+     * 
+     * System.out.println("Banane avec le const vide: " + banane);
+     * System.out.println("Banane avec les param initialisé: " + bananeParams);
+     * System.out.println("Banane avec le prix negatif: " + bananeNegatif);
+     * }
+     */
 }
+
+ 
